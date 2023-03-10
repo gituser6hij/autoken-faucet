@@ -20,6 +20,7 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"alchemy-sdk": "^2.6.1",
 		"ethers": "^6.1.0"
 	}
 }
