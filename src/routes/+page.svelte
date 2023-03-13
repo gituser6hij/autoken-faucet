@@ -1,51 +1,25 @@
 <script>
-  import { ethers } from "ethers";
-  import { Network, Alchemy } from "alchemy-sdk";
+  import Web3 from "web3";
+  import AuditUtilsTokenFaucetABI from "./AuditUtilsTokenFaucetABI.json";
 
-  const settings = {
-    apiKey: "Q3spMRBoqI1YrRBG7_YH6a6DWToyP6nP",
-    network: Network.ETH_GOERLI,
-  };
-  const alchemy = new Alchemy(settings);
-
-  let provider;
-  let signer;
-  let account;
-  let contract;
-
-  // Import the contract ABI and contract address
-  import contractABI from "./contractABI.json";
   const contractAddress = "0x226074b8FdBF962370E08948BBd9AFc828c08363";
 
-  async function main() {
-    const latestBlock = await alchemy.core.getBlockNumber();
-    console.log("The latest block number is", latestBlock);
-  }
-  main();
-
-
-
-  // Access Alchemy Enhanced API requests
-  alchemy.core
-    .getTokenBalances("0x226074b8FdBF962370E08948BBd9AFc828c08363")
-    .then(console.log);
+  let web3;
+  let contract;
 
   export async function connectWallet() {
-    // Check if the user has an Ethereum-compatible browser
     if (window.ethereum) {
       try {
-        // Request the user's permission to connect to their wallet
         await window.ethereum.request({ method: "eth_requestAccounts" });
-        provider = new ethers.providers.JsonRpcProvider(
-          "https://eth-goerli.alchemyapi.io/v2/Q3spMRBoqI1YrRBG7_YH6a6DWToyP6nP"
+        web3 = new Web3(window.ethereum);
+
+        const accounts = await web3.eth.getAccounts();
+        console.log("Connected to wallet:", accounts[0]);
+
+        contract = new web3.eth.Contract(
+          AuditUtilsTokenFaucetABI,
+          contractAddress
         );
-
-        signer = provider.getSigner();
-        account = await signer.getAddress();
-        console.log("Connected to wallet:", account);
-
-        // Create an instance of the contract
-        contract = new ethers.Contract(contractAddress, contractABI, signer);
       } catch (error) {
         console.log(error);
       }
@@ -55,41 +29,62 @@
   }
 
   export async function requestTokens() {
-    // Call the requestTokens function of the contract
-    await contract.requestTokens();
+    if (contract) {
+      await contract.methods
+        .requestTokens()
+        .send({ from: (await web3.eth.getAccounts())[0] });
+    } else {
+      console.log("Contract not initialized.");
+    }
   }
 </script>
 
 <main>
-  <h1>AuditUtils AUtoken faucet</h1>
+  <head>
+    <link rel="stylesheet" href="/style.css" />
+    <!-- Add Google Fonts for the webpage -->
+	<link href="https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap" rel="stylesheet">
+  </head>
+  <div class="container">
+    <div>
+      <a style="margin: 30px;
+      padding: 12px;
+      border-radius: 15px;
+      border: 6px solid rgba(10, 202, 166, 0.9);
+      
+      width: auto;" href="http://web3.auditutils.com/">
+      <img style="max-width: 96px;" src="http://web3.auditutils.com/user137.PNG" alt="user137 Profile Picture">
+    </a>
+    </div>
+    <div>
+      <a style="margin: 30px;
+      padding: 12px;
+      border-radius: 15px;
+      border: 6px solid rgba(10, 202, 166, 0.9);
+      
+      width: auto;" href="https://auditutils.com/">
+      <img style="max-width: 96px;" src="https://auditutils.com/content/images/2023/02/au-pixelize.jpg" alt="auditutils logo pixel">
+    </a>
+    </div>
+  </div>
+  <h1>AUtoken faucet</h1>
 
-  <p style="color: blue; font-size: 30px;">
-    Pick up your AUtoken by connecting your wallet and making a request. You
-    will only need to pay gas fees (GETH) to receive 1000 AUtoken.
+  <p>
+    Obtain your AUtoken by connecting your wallet and submitting a request. The
+    receipt of 1000 AUtoken requires payment of gas fees (GETH) only.
   </p>
-
+  <p>
+    These tokens may be utilized in demonstration applications on the goerli
+    test net:
+  </p>
   <button on:click={connectWallet}>Connect Wallet</button>
   <button on:click={requestTokens}>Request Token</button>
 
-  <p style="color: green; font-size: 30px;">
-    You might use them in those demo apps on goerli test net:
-  </p>
-
-  <p>Read contract functions</p>
-  <a
-    href="https://goerli.etherscan.io/readContract?m=light&a=0x226074b8FdBF962370E08948BBd9AFc828c08363&n=goerli&v=0x226074b8FdBF962370E08948BBd9AFc828c08363#readCollapse1"
-    >"Etherscan Read Contract"</a
-  >
-
-  <p>Write contract functions</p>
-  <a
-    href="https://goerli.etherscan.io/writecontract/index?m=light&v=21.10.1.1&a=0x226074b8FdBF962370E08948BBd9AFc828c08363&n=goerli&p=#collapse1"
-    >"Etherscan Write Contract"</a
-  >
-
-  <p>View contract on Etherscan</p>
-  <a
-    href="https://goerli.etherscan.io/address/0x2788B56Ef7aE6F1cc95f74a91E5f91bE9bF4367e"
-    >"Etherscan Contract"</a
+  <a style="font-family: monospace;
+  color: #fff;
+  font-size: 1.5em;
+  width: auto;"
+    href="https://goerli.etherscan.io/address/0x226074b8FdBF962370E08948BBd9AFc828c08363" target="_blank"
+    >View the smart contract on Etherscan Goerli</a
   >
 </main>

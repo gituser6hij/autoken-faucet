@@ -1,0 +1,181 @@
+/* Add styles for the body */
+body {
+    background: #111;
+    color: white;
+    font-family: 'Press Start 2P', cursive;
+    text-align: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* Set the font size for paragraphs */
+p {
+    font-size: 1.5em;
+    font-family: monospace;
+}
+
+/* Change paragraph color when hovered over */
+p:hover {
+    
+    color: rgba(10, 202, 166, 0.9);
+}
+
+/* Add styles for h1 */
+h1 {
+    font-size: 3em;
+    color: white;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-shadow: 1px 1px #0acaa6;
+    /* add retro-style text shadow */
+}
+
+/* Change h1 color when hovered over */
+h1:hover {
+    color: rgba(10, 202, 166, 0.9);
+    font-size: 3em;
+
+}
+
+/* Add styles for h2 */
+h2 {
+    font-size: 2.5em;
+    color: white;
+    text-shadow: 1px 1px #0acaa6;
+    /* add retro-style text shadow */
+}
+
+/* Change h2 color when hovered over */
+h2:hover {
+    color: rgba(10, 202, 166, 0.9);
+
+    transition: all 0.3s ease-in-out;
+
+}
+
+h3 {
+    font-size: 1.5em;
+    color: white;
+    text-shadow: 1px 1px #0acaa6;
+    text-align: center;
+    /* add retro-style text shadow */
+}
+
+/* Change h3 color when hovered over */
+h3:hover {
+    
+}
+
+
+/* Add styles for links */
+a {
+    font-size: 1.5em;
+    color: white;
+    text-decoration: none;
+    margin: 30px;
+    padding: 15px;
+    border-radius: 15px;
+    border: 6px solid rgba(10, 202, 166, 0.9);
+    transition: all 0.3s ease-in-out;
+    /* add transition effect */
+    display: inline-block;
+    width: 70%;
+    /* change the width value to your preference */
+}
+
+/* Change link background color and animation when hovered over */
+a:hover {
+    background-color: rgba(10, 202, 166, 0.9);
+    
+    /* add animation effect */
+
+}
+
+/* Change h2 color inside link when hovered over */
+a:hover h2 {
+    color: black;
+    /* change the color of h1 inside the link */
+}
+
+/* Change paragraph color inside link when hovered over */
+a:hover p {
+    color: black;
+
+}
+
+img:hover {
+    transform: scale(1.15);
+}
+
+ul {
+    list-style-type: none;
+}
+
+footer img {
+    max-width: 96px;
+    max-height: 96px;
+}
+
+footer .link-tree a {
+    display: inline-block;
+    text-decoration: none;
+    margin-right: 15px;
+}
+
+footer .link-tree a img {
+    display: inline-block;
+    vertical-align: middle;
+    width: 48px;
+    height: 48px;
+    margin-right: 15px;
+}
+
+.portfolio-item-icons img {
+    max-height: 48px;
+}
+
+#skills ul {
+    font-family: monospace;
+    text-align: center;
+    font-size: 1.5em;
+    border-radius: 15px;
+    border: 6px solid rgba(10, 202, 166, 0.9);
+    margin: 30px;
+    padding: 15px;
+}
+
+#skills ul li:hover {
+    color: rgba(10, 202, 166, 0.9);
+}
+
+section {
+    margin-bottom: 150px;
+}
+footer {
+    margin-top: 150px;
+}
+button {
+    background-color: #111;
+    margin: 30px;
+    padding: 12px;
+    border-radius: 15px;
+    border: 6px solid rgba(10, 202, 166, 0.9);
+    font-family: monospace;
+    color: #fff;
+    font-size: 1.5em;
+}
+button:hover {
+    background-color: #0acaa6;
+    color: #111;
+    font-weight: bold;
+}
+.container {
+    display: flex; /* use flexbox */
+    justify-content: center; /* center the items horizontally */
+    align-items: center; /* center the items vertically */
+  }
+  .container div {
+    flex: 1; /* allow each div to take up equal space */
+  }
