@@ -53,7 +53,7 @@
       border: 6px solid rgba(10, 202, 166, 0.9);
       
       width: auto;" href="http://web3.auditutils.com/">
-      <img style="max-width: 96px;" src="http://web3.auditutils.com/user137.PNG" alt="user137 Profile Picture">
+      <img style="max-width: 96px;" src="user137.PNG" alt="user137 Profile Picture">
     </a>
     </div>
     <div>
