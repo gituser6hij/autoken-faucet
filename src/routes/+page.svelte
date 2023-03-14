@@ -43,28 +43,45 @@
   <head>
     <link rel="stylesheet" href="/style.css" />
     <!-- Add Google Fonts for the webpage -->
-	<link href="https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <div class="container">
     <div>
-      <a style="margin: 30px;
+      <a
+        style="margin: 30px;
       padding: 12px;
       border-radius: 15px;
       border: 6px solid rgba(10, 202, 166, 0.9);
       
-      width: auto;" href="http://web3.auditutils.com/">
-      <img style="max-width: 96px;" src="user137.PNG" alt="user137 Profile Picture">
-    </a>
+      width: auto;"
+        href="http://web3.auditutils.com/"
+      >
+        <img
+          style="max-width: 96px;"
+          src="user137.PNG"
+          alt="user137 Profile Picture"
+        />
+      </a>
     </div>
     <div>
-      <a style="margin: 30px;
+      <a
+        style="margin: 30px;
       padding: 12px;
       border-radius: 15px;
       border: 6px solid rgba(10, 202, 166, 0.9);
       
-      width: auto;" href="https://auditutils.com/">
-      <img style="max-width: 96px;" src="https://auditutils.com/content/images/2023/02/au-pixelize.jpg" alt="auditutils logo pixel">
-    </a>
+      width: auto;"
+        href="https://auditutils.com/"
+      >
+        <img
+          style="max-width: 96px;"
+          src="https://auditutils.com/content/images/2023/02/au-pixelize.jpg"
+          alt="auditutils logo pixel"
+        />
+      </a>
     </div>
   </div>
   <h1>AUtoken faucet</h1>
@@ -79,12 +96,13 @@
   </p>
   <button on:click={connectWallet}>Connect Wallet</button>
   <button on:click={requestTokens}>Request Token</button>
-
-  <a style="font-family: monospace;
+  <br />
+  <a
+    style="font-family: monospace;
   color: #fff;
   font-size: 1.5em;
   width: auto;"
-    href="https://goerli.etherscan.io/address/0x226074b8FdBF962370E08948BBd9AFc828c08363" target="_blank"
-    >View the smart contract on Etherscan Goerli</a
+    href="https://goerli.etherscan.io/address/0x226074b8FdBF962370E08948BBd9AFc828c08363"
+    target="_blank">View the smart contract on Etherscan Goerli</a
   >
 </main>

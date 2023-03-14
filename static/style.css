@@ -22,7 +22,7 @@ p:hover {
 
 /* Add styles for h1 */
 h1 {
-    font-size: 3em;
+    font-size: 2.5em;
     color: white;
     position: relative;
     display: flex;
@@ -35,13 +35,11 @@ h1 {
 /* Change h1 color when hovered over */
 h1:hover {
     color: rgba(10, 202, 166, 0.9);
-    font-size: 3em;
-
 }
 
 /* Add styles for h2 */
 h2 {
-    font-size: 2.5em;
+    font-size: 2em;
     color: white;
     text-shadow: 1px 1px #0acaa6;
     /* add retro-style text shadow */
@@ -71,14 +69,14 @@ h3:hover {
 
 /* Add styles for links */
 a {
-    font-size: 1.5em;
+    font-size: 1.3em;
     color: white;
     text-decoration: none;
     margin: 30px;
     padding: 15px;
     border-radius: 15px;
     border: 6px solid rgba(10, 202, 166, 0.9);
-    transition: all 0.3s ease-in-out;
+    transition: all 0.2s ease-in-out;
     /* add transition effect */
     display: inline-block;
     width: 70%;
@@ -165,6 +163,8 @@ button {
     font-family: monospace;
     color: #fff;
     font-size: 1.5em;
+    transition: all 0.2s ease-in-out;
+
 }
 button:hover {
     background-color: #0acaa6;
