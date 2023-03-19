@@ -85,6 +85,13 @@
     </div>
   </div>
   <h1>AUtoken faucet</h1>
+  <div>
+    <img
+          style="max-width: 96px;"
+          src="au-token-150px-t.png"
+          alt="auditutiltoken logo"
+        />
+  </div>
 
   <p>
     Obtain your AUtoken by connecting your wallet and submitting a request. The
